@@ -10,4 +10,4 @@ eureka:
       defaultZone: http://localhost:8090/eureka
 spring:
   application:
-    name: user
+    name: userservice
