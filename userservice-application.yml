@@ -11,3 +11,5 @@ eureka:
 spring:
   application:
     name: userservice
+server:
+  port: 8081
