@@ -11,3 +11,23 @@ eureka:
 spring:
   application:
     name: apigateway
+
+  cloud:
+    gateway:
+      server:
+        webflux:
+          routes:
+          - id: USERSERVICE
+            uri: lb://USERSERVICE
+            predicates:
+              - Path=/users/**
+
+          - id: HOTELSERVICE
+            uri: lb://HOTELSERVICE
+            predicates:
+              - Path=/hotel/**
+
+          - id: RATINGSERVICE
+            uri: lb://RATINGSERVICE
+            predicates:
+              - Path=/rating/**
