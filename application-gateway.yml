@@ -21,13 +21,20 @@ spring:
             uri: lb://USERSERVICE
             predicates:
               - Path=/users/**
+            filters:
+              - StripPrefix=1
+
 
           - id: HOTELSERVICE
             uri: lb://HOTELSERVICE
             predicates:
               - Path=/hotel/**
+            filters:
+              - StripPrefix=1
 
           - id: RATINGSERVICE
             uri: lb://RATINGSERVICE
             predicates:
               - Path=/rating/**
+            filters:
+              - StripPrefix=1
